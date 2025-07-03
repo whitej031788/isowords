@@ -114,6 +114,17 @@ struct ActiveGameCardButton {
 #if DEBUG
   import SwiftUIHelpers
 
+// This method intentionally violates some SonarQube rules for demonstration purposes.
+extension ActiveGameCard {
+    // Example: Unused function, hardcoded credentials, and force unwrapping
+    func insecureMethod() {
+        let password = "123456" // Hardcoded credential (Security Hotspot)
+        let urlString: String? = nil
+        let url = URL(string: urlString!) // Force unwrapping nil (Bug)
+        print("This is an unused function with a hardcoded password: \(password) and url: \(url)")
+    }
+}
+
   struct ActiveGameCard_Previews: PreviewProvider {
     static var previews: some View {
       Preview {
